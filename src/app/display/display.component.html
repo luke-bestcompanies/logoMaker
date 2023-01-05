@@ -1,0 +1,76 @@
+
+<div class="grid">
+
+    <div class="controls">
+        <div class="color">
+            <p style="margin-top:5px ;">Colour</p>
+            <button (click)="backgroundColor = 'red'">Red</button>
+            <button (click)="backgroundColor = 'blue'">Blue</button>
+            <button (click)="backgroundColor = 'white'">White</button>
+        </div>
+        <div class="topLine">
+            <p>Top Line</p>
+            <input type="text" [(ngModel)]="topLine"/>
+        </div>
+        <div class="rankStyle">
+            <p>Rank Style</p>
+            <button (click)="rankStyle = 'top'">Top</button>
+            <button (click)="rankStyle = 'hash'">#</button>
+            <button (click)="rankStyle = 'none'">None</button>
+        </div>
+        <div class="rankNumber">
+            <p>Rank Number</p>
+            <button (click)="rankNumber = 1">1</button>
+            <button (click)="rankNumber = 5">5</button>
+            <button (click)="rankNumber = 10">10</button>
+            <button (click)="rankNumber = 25">25</button>
+            <button (click)="rankNumber = 50">50</button>
+            <button (click)="rankNumber = 75">75</button>
+            <button (click)="rankNumber = 100">100</button>
+        </div>
+        <div class="topLine">
+            <p>Text Line One</p>
+            <input type="text" [(ngModel)]="textLineOne"/>
+        </div>
+        <div class="topLine">
+            <p>Text Line Two</p>
+            <input type="text" [(ngModel)]="textLineTwo"/>
+        </div>
+        <div class="topLine">
+            <p>Year</p>
+            <input type="number" [(ngModel)]="year"/>
+        </div>
+        <div class="topLine">
+            <p>Website</p>
+            <input type="text" [(ngModel)]="website"/>
+        </div>
+    </div>
+
+    <div class="display">
+        <div class="display_container">
+            <div class="display_container_topLine">{{topLine}}</div>
+            <div class="display_container_ranking"
+            [ngClass]="{'redBg': backgroundColor === 'red',
+            'blueBg': backgroundColor === 'blue', 
+            'whiteBgRedText': backgroundColor === 'white',
+            'rankTop': rankStyle === 'top',
+            'rankHash': rankStyle === 'hash',
+            'rankNone': rankStyle === 'none'}"
+            >
+                <span *ngIf="rankStyle === 'top'">Top</span><span *ngIf="rankStyle === 'hash'">#</span>{{rankNumber}}
+            </div>
+            <div class="display_container_textLineOne">{{textLineOne}}</div>
+            <div class="display_container_textLineTwo"
+            [ngClass]="{'redBg': backgroundColor === 'red',
+            'blueBg': backgroundColor === 'blue', 
+            'whiteBgBlackText': backgroundColor === 'white'}"
+            >
+            {{textLineTwo}}</div>
+            <div class="display_container_year">{{year}}</div>
+            <div class="display_container_website">{{website}}</div>
+        </div>
+    </div>
+
+    
+
+</div>

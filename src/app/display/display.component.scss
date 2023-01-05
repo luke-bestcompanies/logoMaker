@@ -1,0 +1,141 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-items: center;
+    padding-top: 50px;
+}
+
+.display {
+    width: 400px;
+    height: 400px;
+    border-radius: 42px;
+    display: flex;
+    justify-content: center;
+    background-color: #000;
+    border:  solid 8px #fff;
+    
+
+    &_container {
+
+        text-align: center;
+        font-size: 24px;
+        border-radius: 42px;
+        display: grid;
+        grid-template-rows: repeat(6, auto);
+        font-family: Helvetica, sans-serif;
+        text-transform: uppercase;
+        align-content: start;
+        font-weight: 600;
+        width: 360px;
+
+            div {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow:clip;
+            }
+
+            &_topLine, &_textLineOne, &_textLineTwo, &_year, &_website {
+                color: #FFF;
+            }
+
+            &_topLine {
+                padding-top: 14px;
+                padding-bottom: 8px;
+            }
+            
+            &_ranking {
+                height: 180px;
+            }
+
+            &_textLineOne {
+                padding: 10px 0px;
+            }
+
+            &_textLineTwo {
+                padding: 8px 0px;
+                font-size: 20px;
+            }
+
+            &_year {
+                font-size: 42px;
+                padding-top: 5px;
+            }
+
+            &_website {
+                font-size: 16px;
+                text-transform: lowercase;
+            }
+    }
+
+    .redBg {
+        background-color: red;
+        color: white;
+    }
+
+    .blueBg {
+        background-color: blue;
+        color: white;
+    }
+
+    .whiteBgRedText {
+        background-color: white;
+        color: red;
+    }
+
+    .whiteBgBlackText {
+        background-color: white;
+        color: #000;
+    }
+
+    .rankTop {
+        font-size: 165px;
+
+        span {
+            font-size: 40px;
+            font-weight: 400;
+            position: relative;
+            top: -22px;
+        }
+    }
+
+    .rankHash {
+        font-size: 165px;
+
+        span {
+            font-size: 95px;
+            font-weight: 400;
+            padding-right: 5px;
+        }
+    }
+
+    .rankNone {
+        font-size: 165px;
+    }
+}
+
+.controls {
+    width:  380px;
+    background-color: #FFF;
+    border-radius: 42px;
+    padding: 30px 20px 40px;
+    font-family: Helvetica, sans-serif;
+
+    p {
+        margin-bottom: 5px;
+    }
+
+    button {
+        margin-right: 5px;
+        height: 25px;
+        padding: 0px 10px;
+        background-color: #fff;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    input {
+        border: solid 2px black;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+}
